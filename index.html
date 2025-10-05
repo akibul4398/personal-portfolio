@@ -133,18 +133,49 @@
     }
     .btn:hover{background:#22705fd5;}
 
-    /* SOCIAL ICONS */
-    .social-section{display:flex;gap:50px;margin-top:20px;}
-    .icons a img{
-      width:34px;height:34px;
-      margin-right:10px;
-      transition:.3s;
-      filter:grayscale(100%);
-    }
-    .icons a img:hover{
-      transform:scale(1.2);
-      filter:grayscale(0%);
-    }
+   /* social section */
+.social-section {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-family: system-ui, sans-serif;
+}
+
+.social-section p {
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  font-size: 12px;
+  color: #555;
+  letter-spacing: 1px;
+}
+
+.social-section .icons {
+  display: flex;
+  gap: 12px;
+}
+
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #f5f6fb;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  font-size: 20px;
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.icon-btn:hover {
+  transform: translateY(-4px);
+  background: #fff;
+  color: #0077b5; /* hover color */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+}
+
 
     /* ========== ABOUT ========== */
     .about-section{text-align:center;margin:60px 0;}
@@ -361,24 +392,24 @@
       <p class="description">
         “AWS Cloud Specialist working since 2024, proficient in cloud infrastructure, user experience, and research. Skilled in building secure, scalable, and user-focused solutions with AWS services.”
       </p>
-      <div class="social-section">
-        <div class="find">
-          <p>FIND WITH ME</p>
-          <div class="icons">
-            <a href="#"><img src="facebook.png" alt="Facebook"></a>
-            <a href="#"><img src="instagram.png" alt="Instagram"></a>
-            <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
-          </div>
-        </div>
-        <div class="best-skill">
-          <p>BEST SKILL ON</p>
-          <div class="icons">
-            <a href="#"><img src="figma.png" alt="Figma"></a>
-            <a href="#"><img src="xd.png" alt="XD"></a>
-            <a href="#"><img src="sketch.png" alt="Sketch"></a>
-          </div>
-        </div>
-      </div>
+  <div class="social-section">
+   <div class="find">
+    <p>FIND WITH ME</p>
+    <div class="icons">
+      <a class="icon-btn" href="#"><i class="fab fa-facebook-f"></i></a>
+      <a class="icon-btn" href="#"><i class="fab fa-instagram"></i></a>
+      <a class="icon-btn" href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+     <div class="best-skill">
+    <p>BEST SKILL ON</p>
+    <div class="icons">
+      <a class="icon-btn" href="#"><i class="fab fa-figma"></i></a>
+      <a class="icon-btn" href="#"><i class="fab fa-xing"></i></a>
+      <a class="icon-btn" href="#"><i class="fab fa-sketch"></i></a>
+         </div>
+         </div>
+       </div>
       <p class="cta"><a class="btn" href="#contact">Hire / Contact</a></p>
     </div>
     <div class="hero-img">
@@ -565,3 +596,4 @@ AWS Cloud Specialist | UX & Research Enthusiast | Building Scalable, Secure, and
   </script>
 </body>
 </html>
+
