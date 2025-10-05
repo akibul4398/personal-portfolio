@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adiyan CloudBox</title>
+  <style>
+    /* ========== RESET ========== */
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+    body{
+      background:#f7f8fd;
+      color:#333;
+      line-height:1.6;
+    }
+
+    /* ========== HEADER ========== */
+    header{
+      background:#222;
+      color:#fff;
+      padding:15px 40px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      position:fixed;
+      top:0; left:0;
+      width:100%;
+      z-index:1000;
+      box-shadow:0 2px 6px rgba(0,0,0,0.2);
+    }
+    body{padding-top:80px;}
+
+    /* LOGO */
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:.6rem;
+      text-decoration:none;
+      color:#fff;
+      font-weight:700;
+    }
+    .logo .mark{
+      width:44px;height:44px;border-radius:10px;
+      background:conic-gradient(from 120deg,#00aaff,#ff0057);
+      display:inline-grid;place-items:center;
+      font-weight:800;color:#fff;
+      box-shadow:0 4px 12px rgba(0,0,0,0.3);
+      transform:rotate(-20deg);
+      transition:.4s;
+    }
+    .logo:hover .mark{transform:rotate(0deg) scale(1.05);}
+
+    /* NAVIGATION */
+    nav ul{
+      list-style:none;
+      display:flex;
+      gap:25px;
+    }
+    nav ul li a{
+      text-decoration:none;
+      color:#fff;
+      font-weight:500;
+      position:relative;
+      transition:.3s;
+    }
+    nav ul li a::after{
+      content:"";
+      position:absolute;
+      width:0;height:2px;
+      left:0;bottom:-5px;
+      background:#00aaff;
+      transition:.3s;
+    }
+    nav ul li a:hover{color:#00aaff;}
+    nav ul li a:hover::after{width:100%;}
+
+    /* MOBILE MENU */
+    .hamburger{display:none;cursor:pointer;font-size:1.8rem;}
+    @media(max-width:768px){
+      nav ul{
+        flex-direction:column;
+        position:absolute;
+        top:70px; right:0;
+        background:#222;
+        width:200px;
+        padding:15px;
+        border-radius:6px;
+        display:none;
+      }
+      nav ul.active{display:flex;}
+      .hamburger{display:block;color:#fff;}
+    }
+
+    /* ========== HERO SECTION ========== */
+    .hero{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:60px 10%;
+      gap:50px;
+      flex-wrap:wrap;
+    }
+    .hero-text{flex:1;min-width:300px;}
+    .hero-text .welcome{color:#777;font-size:14px;margin-bottom:10px;}
+    .hero-text h1{font-size:38px;margin-bottom:10px;text-align: left;}
+    .hero-text h1 span{color:#111;font-weight:600;}
+    .hero-text h2{font-size:24px;margin-bottom:15px;}
+    .hero-text h2 .highlight{color:#ff0057;font-weight:700;}
+    .hero-text .description{font-size:16px;margin-bottom:20px;}
+
+    .hero-img img{
+      width:340px;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.2);
+      transition:.4s;
+    }
+    .hero-img img:hover{transform:scale(1.05);}
+
+    /* BUTTON */
+    .btn{
+      display:inline-block;
+      padding:10px 8px;
+      background:#1b98e6;
+      color:#fff;
+      border-radius:7px;
+      text-decoration:none;
+      font-weight:500;
+      transition:.2s;
+    }
+    .btn:hover{background:#22705fd5;}
+
+    /* SOCIAL ICONS */
+    .social-section{display:flex;gap:50px;margin-top:20px;}
+    .icons a img{
+      width:34px;height:34px;
+      margin-right:10px;
+      transition:.3s;
+      filter:grayscale(100%);
+    }
+    .icons a img:hover{
+      transform:scale(1.2);
+      filter:grayscale(0%);
+    }
+
+    /* ========== ABOUT ========== */
+    .about-section{text-align:center;margin:60px 0;}
+    .about-section h2{margin-bottom:15px;}
+    .quote{
+      margin-top:15px;
+      font-style:italic;
+      background:#eee;
+      display:inline-block;
+      padding:10px 20px;
+      border-radius:5px;
+    }
+
+    /* ========== WHO I AM (2nd hero) ========== */
+    .hero.second{margin-top:40px;}
+    .hero.second .hero-img{order:1;}
+    .hero.second .hero-text{order:2;}
+
+    /* ========== SKILLS ========== */
+       body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-block {
+      padding: 20px;
+      border-radius: 12px;
+      color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .skill-block:hover {
+      transform: scale(1.05);
+    }
+
+    .skill-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .skill-caption {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    /* Progress bar container */
+    .progress-container {
+      background: rgba(255,255,255,0.3);
+      border-radius: 8px;
+      overflow: hidden;
+      height: 12px;
+    }
+
+    .progress {
+      height: 12px;
+      border-radius: 8px;
+      background: #fff;
+      width: 0;
+    }
+
+    /* Different colors for each skill */
+    .cloud { background: #3498db; }
+    .linux { background: #27ae60; }
+    .docker { background: #2298e6; }
+    .networking { background: #27ae60; }
+    .python { background: #2298e6;}
+    .aws { background: #27ae60;}
+  
+
+    /* ========== EDUCATION ========== */
+    .timeline{position:relative;margin:50px 0;}
+    .timeline::after{
+      content:'';position:absolute;
+      left:50%;top:0;width:4px;height:100%;
+      background:#00aaff;transform:translateX(-50%);
+    }
+    .timeline-item{position:relative;width:50%;padding:20px 40px;}
+    .timeline-item:nth-child(odd){left:0;}
+    .timeline-item:nth-child(even){left:50%;}
+    .timeline-item .content{
+      background:#fff;padding:15px;border-radius:10px;
+      box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    /* ========== PROJECTS ========== */
+      body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project-block {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .project-block:hover {
+      transform: scale(1.05);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 15px;
+    }
+
+    .project-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+      text-align: center;
+    }
+
+    .project-caption {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #555;
+      text-align: center;
+    }
+
+
+    /* ========== CONTACT ========== */
+    .contact-section{text-align:center;margin:60px 0;}
+    .contact-grid{
+      display:grid;
+      gap:15px;
+      max-width:400px;
+      margin:20px auto;
+    }
+    input,textarea{
+      width:100%;padding:10px;
+      border:1px solid #ccc;
+      border-radius:5px;
+    }
+
+    /* FOOTER */
+    footer{
+      margin-top:50px;
+      background:#222;
+      color:#fff;
+      text-align:center;
+      padding:15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Logo -->
+    <a href="#" class="logo">
+      <span class="mark">CB</span>
+      <span>CloudBox</span>
+    </a>
+
+    <!-- Navigation -->
+    <nav>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <ul id="nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="Skills.html">Skills</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="./Adiyan Professional Resume.pdf" download>Download CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION 1 -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <p class="welcome">WELCOME TO MY WORLD</p>
+      <h1>Hi,I'm <span>Adiyan Akib</span></h1>
+      <h2>a <span class="highlight">Professional AWS Specialist</span></h2>
+      <p class="description">
+        “AWS Cloud Specialist working since 2024, proficient in cloud infrastructure, user experience, and research. Skilled in building secure, scalable, and user-focused solutions with AWS services.”
+      </p>
+      <div class="social-section">
+        <div class="find">
+          <p>FIND WITH ME</p>
+          <div class="icons">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+          </div>
+        </div>
+        <div class="best-skill">
+          <p>BEST SKILL ON</p>
+          <div class="icons">
+            <a href="#"><img src="figma.png" alt="Figma"></a>
+            <a href="#"><img src="xd.png" alt="XD"></a>
+            <a href="#"><img src="sketch.png" alt="Sketch"></a>
+          </div>
+        </div>
+      </div>
+      <p class="cta"><a class="btn" href="#contact">Hire / Contact</a></p>
+    </div>
+    <div class="hero-img">
+      <img src="./IMG_20251002_092554.jpg" alt="Profile">
+    </div>
+  </section>
+
+  <!-- WHO I AM -->
+  <section class="hero second">
+    <div class="hero-img">
+      <img src="./image (1)_edit_56745536699382.jpg" alt="Profile">
+    </div>
+    <div class="hero-text">
+      <h2>Who I Am?</h2>
+      <p>
+AWS Cloud Specialist | UX & Research Enthusiast | Building Scalable, Secure, and User-Centric Solutions | Bangladesh | Since 2024.    
+  
+ <section> <a href="./read more.html" class="btn">Read More</a> </section>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section">
+    <h2>About</h2>
+    <p>“On a journey to engineer the future of the cloud.”</p>
+    <p class="quote">“A learner today, a Cloud Engineer tomorrow.”</p>
+  </section>
+
+  <!-- SKILLS -->
+  
+  <h1>Skills</h1>
+
+  <div class="skills-container">
+
+    <div class="skill-block cloud">
+      <div class="skill-title">Cloud Basics</div>
+      <div class="skill-caption">
+        • Understand cloud computing concepts<br>
+        • Learn types of cloud (IaaS, PaaS, SaaS)<br>
+        • Familiar with cloud deployment models
+      </div>
+      <div class="progress-container">
+        <div class="progress" style="width: 35%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-block linux">
+      <div class="skill-title">Linux</div>
+      <div class="skill-caption">
+        • Linux commands & file system<br>
+        • User & permission management<br>
+        • Basic shell scripting
+      </div>
+      <div class="progress-container">
+        <div class="progress" style="width: 30%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-block docker">
+      <div class="skill-title">Docker</div>
+      <div class="skill-caption">
+        • Container basics<br>
+        • Build & run Docker containers<br>
+        • Docker images & volumes
+      </div>
+      <div class="progress-container">
+        <div class="progress" style="width: 25%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-block networking">
+      <div class="skill-title">Networking</div>
+      <div class="skill-caption">
+        • Network fundamentals<br>
+        • IP addressing & subnetting<br>
+        • Routing & basic protocols
+      </div>
+      <div class="progress-container">
+        <div class="progress" style="width: 40%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-block python">
+      <div class="skill-title">Python</div>
+      <div class="skill-caption">
+        • Python basics & syntax<br>
+        • Data types & loops<br>
+        • Functions & simple scripts
+      </div>
+      <div class="progress-container">
+        <div class="progress" style="width: 35%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-block aws">
+      <div class="skill-title">AWS</div>
+      <div class="skill-caption">
+        • AWS core services (EC2, S3)<br>
+        • IAM & security basics<br>
+        • Deploy simple cloud apps
+      </div>
+      <div class="progress-container">
+        <div class="progress" style="width: 20%;"></div>
+      </div>
+    </div>
+
+  </div>
+
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2>Education & Certifications</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="content"><h3>SSC</h3><p>GPA 4.50 out of 5.00</p></div>
+      </div>
+      <div class="timeline-item">
+        <div class="content"><h3>Diploma in Engineering</h3><p>Dept. of CSE, CGPA 3.40/4.00</p></div>
+      </div>
+      <div class="timeline-item">
+        <div class="content"><h3>Certifications</h3><p>AWS, Python, Networking, HTML & CSS</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <h1>Projects</h1>
+
+  <div class="projects-container">
+
+    <div class="project-block">
+      <img src="./image 1Gemini_Generated_Image_1fcri81fcri81fcr.png" alt="Cloud Portfolio Website" class="project-image">
+      <div class="project-content">
+        <div class="project-title">Cloud Portfolio Website</div>
+        <div class="project-caption">
+          A portfolio website hosted on the cloud, showcasing skills in cloud computing.
+        </div>
+      </div>
+    </div>
+
+    <div class="project-block">
+      <img src="./image 2 Gemini_Generated_Image_u6ctbu6ctbu6ctbu.png" alt="AWS Deployment Demo" class="project-image">
+      <div class="project-content">
+        <div class="project-title">AWS Deployment Demo</div>
+        <div class="project-caption">
+          Demonstrated deployment of applications using AWS services like EC2 and S3.
+        </div>
+      </div>
+    </div>
+
+    <div class="project-block">
+      <img src="./image 3 Gemini_Generated_Image_g14t1og14t1og14t.png" alt="Dockerized Web App" class="project-image">
+      <div class="project-content">
+        <div class="project-title">Dockerized Web App</div>
+        <div class="project-caption">
+          A web application containerized using Docker for easy deployment and scalability.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <h2>Contact</h2>
+    <p>If you'd like to connect — send a message.</p>
+    <form class="contact-grid" action="#" method="post" onsubmit="return false;">
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea rows="4" placeholder="Message"></textarea>
+      <div class="submit"><button class="btn" type="submit">Send</button></div>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Adiyan — Built with HTML & CSS</p>
+  </footer>
+
+  <script>
+    function toggleMenu(){
+      document.getElementById('nav-menu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

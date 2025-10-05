@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Skills</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-block {
+      padding: 20px;
+      border-radius: 12px;
+      color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .skill-block:hover {
+      transform: scale(1.05);
+    }
+
+    .skill-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .skill-caption {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+
+    /* Progress bar container */
+    .progress-container {
+      background: rgba(255,255,255,0.3);
+      border-radius: 8px;
+      overflow: hidden;
+      height: 12px;
+    }
+
+    .progress {
+      height: 12px;
+      border-radius: 8px;
+      background: #fff;
+      width: 0;
+    }
+
+    /* Different colors for each skill */
+    .cloud { background: #3498db; }
+    .linux { background: #27ae60; }
+    .docker { background: #e67e22; }
+    .networking { background: #9b59b6; }
+    .python { background: #f1c40f; color: #333; }
+    .aws { background: #e74c3c; }
+  </style>
+</head>
+<body>
+
+  <h1>My Skills</h1>
+
+  <div class="skills-container">
+
+    <div class="skill-block cloud">
+      <div class="skill-title">Cloud Basics</div>
+      <div class="skill-caption">
+        • Understand cloud computing concepts<br>
+        • Learn types of cloud (IaaS, PaaS, SaaS)<br>
+        • Familiar with cloud deployment models
+      </div>
+      <div class="progress-container">
+        <div class="progress" style="width: 35%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-block linux">
+      <div class="skill-title">Linux</div>
+      <div class="skill-caption">
+        • Linux commands & file system<br>
+        • User & permission management<br>
+        • Basic shell scripting
+      </div>
+      <div class="progress-container">
+        <div class="progress" style="width: 30%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-block docker">
+      <div class="skill-title">Docker</div>
+      <div class="skill-caption">
+        • Container basics<br>
+        • Build & run Docker containers<br>
+        • Docker images & volumes
+      </div>
+      <div class="progress-container">
+        <div class="progress" style="width: 25%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-block networking">
+      <div class="skill-title">Networking</div>
+      <div class="skill-caption">
+        • Network fundamentals<br>
+        • IP addressing & subnetting<br>
+        • Routing & basic protocols
+      </div>
+      <div class="progress-container">
+        <div class="progress" style="width: 40%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-block python">
+      <div class="skill-title">Python</div>
+      <div class="skill-caption">
+        • Python basics & syntax<br>
+        • Data types & loops<br>
+        • Functions & simple scripts
+      </div>
+      <div class="progress-container">
+        <div class="progress" style="width: 35%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-block aws">
+      <div class="skill-title">AWS</div>
+      <div class="skill-caption">
+        • AWS core services (EC2, S3)<br>
+        • IAM & security basics<br>
+        • Deploy simple cloud apps
+      </div>
+      <div class="progress-container">
+        <div class="progress" style="width: 20%;"></div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project-block {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .project-block:hover {
+      transform: scale(1.05);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 15px;
+    }
+
+    .project-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+      text-align: center;
+    }
+
+    .project-caption {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #555;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Projects</h1>
+
+  <div class="projects-container">
+
+    <div class="project-block">
+      <img src="./image 1Gemini_Generated_Image_1fcri81fcri81fcr.png" alt="Cloud Portfolio Website" class="project-image">
+      <div class="project-content">
+        <div class="project-title">Cloud Portfolio Website</div>
+        <div class="project-caption">
+          A portfolio website hosted on the cloud, showcasing skills in cloud computing.
+        </div>
+      </div>
+    </div>
+
+    <div class="project-block">
+      <img src="./image 2 Gemini_Generated_Image_u6ctbu6ctbu6ctbu.png" alt="AWS Deployment Demo" class="project-image">
+      <div class="project-content">
+        <div class="project-title">AWS Deployment Demo</div>
+        <div class="project-caption">
+          Demonstrated deployment of applications using AWS services like EC2 and S3.
+        </div>
+      </div>
+    </div>
+
+    <div class="project-block">
+      <img src="./image 3 Gemini_Generated_Image_g14t1og14t1og14t.png" alt="Dockerized Web App" class="project-image">
+      <div class="project-content">
+        <div class="project-title">Dockerized Web App</div>
+        <div class="project-caption">
+          A web application containerized using Docker for easy deployment and scalability.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
